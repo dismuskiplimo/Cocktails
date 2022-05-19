@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,5 +8,11 @@
 
 body {
   color: #fff;
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

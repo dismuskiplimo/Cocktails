@@ -17,14 +17,25 @@
   </head>
   <body>
     <section id="main-section">
+      <h1>Cocktails</h1>
       <nav>
-        <div id="logo"></div>
+        <div id="logo">
+          <i class="fas fa-cocktail"></i>
+          <span>Cocktails</span>
+        </div>
         <div id="cocktails-list">
           <span>Categories</span>
-          <input type="search" />
+          <fieldset>
+            <input
+              type="search"
+              id="search"
+              name="search"
+              placeholder="Search cocktail..."
+            />
+            <i class="fas fa-search"></i>
+          </fieldset>
         </div>
       </nav>
-      <h1>Cocktails</h1>
       <div id="mask-div"></div>
     </section>
     <script src="index.js"></script>

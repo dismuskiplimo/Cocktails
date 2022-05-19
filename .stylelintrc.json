@@ -3,7 +3,7 @@
   "plugins": ["stylelint-scss", "stylelint-csstree-validator"],
   "rules": {
     "at-rule-no-unknown": [
-      true,
+      null,
       {
         "ignoreAtRules": [
           "tailwind",
@@ -15,7 +15,7 @@
       }
     ],
     "scss/at-rule-no-unknown": [
-      true,
+      null,
       {
         "ignoreAtRules": [
           "tailwind",
@@ -34,6 +34,7 @@
     "**/reset*.css",
     "**/bootstrap*.css",
     "**/*.js",
-    "**/*.jsx"
+    "**/*.jsx",
+    "assets/**"
   ]
 }
