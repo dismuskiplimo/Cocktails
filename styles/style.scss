@@ -1,0 +1,25 @@
+@import 'base';
+
+#main-section {
+  position: relative;
+  height: 100vh;
+  background: url('../assets/background.jpg');
+  background-size: cover;
+
+  h1 {
+    font-size: 12rem;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 60%;
+    left: 3%;
+    z-index: 99;
+  }
+
+  #mask-div {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(37, 37, 37, 0.3);
+  }
+}
