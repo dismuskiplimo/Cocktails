@@ -25,6 +25,12 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  #main-section {
+    background-position: 35%;
+  }
+}
+
 #main-section i.fa-bars {
   display: none;
 }
@@ -32,6 +38,8 @@ body {
 @media (max-width: 600px) {
   #main-section i.fa-bars {
     display: block;
+    padding: 20px;
+    font-size: 2rem;
   }
 }
 
@@ -169,7 +177,13 @@ body {
 @media (min-width: 601px) and (max-width: 1200px) {
   #main-section h1 {
     font-size: 8rem;
-    top: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  #main-section h1 {
+    font-size: 4rem;
+    top: 63%;
   }
 }
 

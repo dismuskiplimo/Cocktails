@@ -10,11 +10,17 @@
     background-position: 35%;
   }
 
+  @include media-sm {
+    background-position: 35%;
+  }
+
   i.fa-bars {
     display: none;
 
     @include media-sm {
       display: block;
+      padding: 20px;
+      font-size: 2rem;
     }
 
     &:hover {
@@ -113,7 +119,11 @@
 
     @include media-md {
       font-size: 8rem;
-      top: 60%;
+    }
+
+    @include media-sm {
+      font-size: 4rem;
+      top: 63%;
     }
   }
 
