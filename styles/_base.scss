@@ -16,3 +16,28 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+@mixin media-md {
+  @media (min-width: 601px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin icon {
+  font-size: 2rem;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

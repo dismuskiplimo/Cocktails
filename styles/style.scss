@@ -1,13 +1,80 @@
 @import 'base';
 
+// Main section
+
+.mobile-div {
+  @include center;
+
+  flex-direction: column;
+  gap: 100px;
+  background: rgba(0, 0, 0, 0.9);
+  height: 50vh;
+
+  #mobile-logo {
+    font-size: 1.8rem;
+  }
+
+  #mobile-cocktails-list {
+    @include center;
+
+    flex-direction: column;
+    gap: 40px;
+    font-size: 1.8rem;
+
+    fieldset {
+      @include center;
+
+      gap: 5px;
+      border: none;
+
+      input {
+        padding: 8px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+      }
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
 #main-section {
   position: relative;
   height: 100vh;
   background: url('../assets/background.jpg');
   background-size: cover;
 
+  @include media-md {
+    background-position: 35%;
+  }
+
+  @include media-sm {
+    background-position: 35%;
+  }
+
+  #mobile-menu {
+    display: none;
+
+    @include media-sm {
+      display: block;
+
+      @include icon;
+    }
+  }
+
   nav {
     @include center;
+
+    @include media-md {
+      padding: 20px 25px;
+    }
+
+    @include media-sm {
+      display: none;
+    }
 
     justify-content: space-between;
     padding: 20px 100px;
@@ -28,8 +95,13 @@
       @include center;
 
       justify-content: space-between;
-      width: 25%;
+      width: 30%;
+      min-width: 500px;
       font-size: 1.8rem;
+
+      @include media-md {
+        min-width: 380px;
+      }
 
       span:hover {
         cursor: pointer;
@@ -39,8 +111,13 @@
         @include center;
 
         gap: 10px;
+        justify-content: flex-end;
         border: none;
         width: 100%;
+
+        @include media-md {
+          width: 50%;
+        }
 
         input {
           width: 60%;
@@ -48,6 +125,10 @@
           padding: 5px 10px;
           font-size: 1rem;
           border-radius: 10px;
+
+          @include media-md {
+            width: 100%;
+          }
 
           &:focus {
             outline: none;
@@ -72,6 +153,15 @@
     top: 60%;
     left: 3%;
     z-index: 99;
+
+    @include media-md {
+      font-size: 8rem;
+    }
+
+    @include media-sm {
+      font-size: 4rem;
+      top: 63%;
+    }
   }
 
   #mask-div {
@@ -81,4 +171,13 @@
     width: 100%;
     background: rgba(37, 37, 37, 0.1);
   }
+}
+
+.nav {
+  flex-direction: column;
+  height: auto;
+}
+
+.menu {
+  @include icon;
 }
