@@ -6,6 +6,10 @@
   background: url('../assets/background.jpg');
   background-size: cover;
 
+  @include media-md {
+    background-position: 35%;
+  }
+
   i.fa-bars {
     display: none;
 
@@ -106,6 +110,11 @@
     top: 60%;
     left: 3%;
     z-index: 99;
+
+    @include media-md {
+      font-size: 8rem;
+      top: 60%;
+    }
   }
 
   #mask-div {

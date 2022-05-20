@@ -19,6 +19,12 @@ body {
   background-size: cover;
 }
 
+@media (min-width: 601px) and (max-width: 1200px) {
+  #main-section {
+    background-position: 35%;
+  }
+}
+
 #main-section i.fa-bars {
   display: none;
 }
@@ -158,6 +164,13 @@ body {
   top: 60%;
   left: 3%;
   z-index: 99;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #main-section h1 {
+    font-size: 8rem;
+    top: 60%;
+  }
 }
 
 #main-section #mask-div {
