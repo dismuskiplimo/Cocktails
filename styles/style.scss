@@ -6,6 +6,18 @@
   background: url('../assets/background.jpg');
   background-size: cover;
 
+  i.fa-bars {
+    display: none;
+
+    @include media-sm {
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   nav {
     @include center;
 

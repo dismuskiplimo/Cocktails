@@ -19,6 +19,20 @@ body {
   background-size: cover;
 }
 
+#main-section i.fa-bars {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #main-section i.fa-bars {
+    display: block;
+  }
+}
+
+#main-section i.fa-bars:hover {
+  cursor: pointer;
+}
+
 #main-section nav {
   display: -webkit-box;
   display: -ms-flexbox;
