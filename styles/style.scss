@@ -1,5 +1,46 @@
 @import 'base';
 
+// Main section
+
+.mobile-div {
+  @include center;
+
+  flex-direction: column;
+  gap: 100px;
+  background: rgba(0, 0, 0, 0.9);
+  height: 50vh;
+
+  #mobile-logo {
+    font-size: 1.8rem;
+  }
+
+  #mobile-cocktails-list {
+    @include center;
+
+    flex-direction: column;
+    gap: 40px;
+    font-size: 1.8rem;
+
+    fieldset {
+      @include center;
+
+      gap: 5px;
+      border: none;
+
+      input {
+        padding: 8px;
+        border-radius: 10px;
+        border: none;
+        font-size: 1rem;
+      }
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
 #main-section {
   position: relative;
   height: 100vh;
@@ -14,17 +55,13 @@
     background-position: 35%;
   }
 
-  i.fa-bars {
+  #mobile-menu {
     display: none;
 
     @include media-sm {
       display: block;
-      padding: 20px;
-      font-size: 2rem;
-    }
 
-    &:hover {
-      cursor: pointer;
+      @include icon;
     }
   }
 
@@ -134,4 +171,13 @@
     width: 100%;
     background: rgba(37, 37, 37, 0.1);
   }
+}
+
+.nav {
+  flex-direction: column;
+  height: auto;
+}
+
+.menu {
+  @include icon;
 }

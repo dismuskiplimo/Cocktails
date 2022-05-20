@@ -12,6 +12,72 @@ body {
   font-family: 'Times New Roman', Times, serif;
 }
 
+.mobile-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 100px;
+  background: rgba(0, 0, 0, 0.9);
+  height: 50vh;
+}
+
+.mobile-div #mobile-logo {
+  font-size: 1.8rem;
+}
+
+.mobile-div #mobile-cocktails-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+  font-size: 1.8rem;
+}
+
+.mobile-div #mobile-cocktails-list fieldset {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+  border: none;
+}
+
+.mobile-div #mobile-cocktails-list fieldset input {
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+.mobile-div #mobile-cocktails-list fieldset i {
+  font-size: 1.5rem;
+}
+
 #main-section {
   position: relative;
   height: 100vh;
@@ -31,20 +97,23 @@ body {
   }
 }
 
-#main-section i.fa-bars {
+#main-section #mobile-menu {
   display: none;
 }
 
 @media (max-width: 600px) {
-  #main-section i.fa-bars {
+  #main-section #mobile-menu {
     display: block;
-    padding: 20px;
     font-size: 2rem;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
   }
-}
-
-#main-section i.fa-bars:hover {
-  cursor: pointer;
+  #main-section #mobile-menu:hover {
+    cursor: pointer;
+  }
 }
 
 #main-section nav {
@@ -193,5 +262,26 @@ body {
   height: 100%;
   width: 100%;
   background: rgba(37, 37, 37, 0.1);
+}
+
+.nav {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+}
+
+.menu {
+  font-size: 2rem;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.menu:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
