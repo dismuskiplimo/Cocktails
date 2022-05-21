@@ -1,12 +1,11 @@
-const mobileMenuIcon = document.querySelector('.fa-bars');
-const closeMenuBtn = document.querySelector('.fa-angle-up');
-const mainSection = document.getElementById('main-section');
+const mobileMenuIcon = document.querySelector(".fa-bars");
+const closeMenuBtn = document.querySelector(".fa-angle-up");
+const mainSection = document.getElementById("main-section");
 
-closeMenuBtn.style.display = 'none';
+closeMenuBtn.style.display = "none";
 
-mobileMenuIcon.addEventListener('click', () => {
-  const mobileMenu = document.createElement('div');
-  mobileMenu.classList.add('mobile-div');
+mobileMenuIcon.addEventListener("click", () => {
+  const mobileMenu = document.createElement("div");
   mobileMenu.innerHTML = `<div id="mobile-logo">
   <i class="fas fa-cocktail"></i>
   <span>Cocktails</span>
@@ -24,21 +23,23 @@ mobileMenuIcon.addEventListener('click', () => {
   </fieldset>
 </div>`;
 
+  mobileMenu.classList.add("mobile-div");
+
   mainSection.appendChild(mobileMenu);
 
-  mobileMenuIcon.style.display = 'none';
-  closeMenuBtn.style.display = 'block';
-  closeMenuBtn.classList.add('menu');
+  mobileMenuIcon.style.display = "none";
+  closeMenuBtn.style.display = "block";
+  closeMenuBtn.classList.add("menu");
 });
 
-closeMenuBtn.addEventListener('click', () => {
-  const mobileMenuActive = document.querySelector('.mobile-div');
+closeMenuBtn.addEventListener("click", () => {
+  const mobileMenuActive = document.querySelector(".mobile-div");
   mobileMenuActive.remove();
-  closeMenuBtn.style.display = 'none';
-  mobileMenuIcon.style.display = 'block';
+  closeMenuBtn.style.display = "none";
+  mobileMenuIcon.style.display = "block";
 });
 
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   if (window.innerWidth < 610) {
     document.location.reload();
   }
