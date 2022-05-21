@@ -1,6 +1,6 @@
 @import 'base';
 
-// Main section
+// Mobile menu navbar
 
 .mobile-div {
   @include center;
@@ -8,7 +8,8 @@
   flex-direction: column;
   gap: 100px;
   background: rgba(0, 0, 0, 0.9);
-  height: 50vh;
+  height: 35vh;
+  width: 100%;
 
   #mobile-logo {
     font-size: 1.8rem;
@@ -20,6 +21,11 @@
     flex-direction: column;
     gap: 40px;
     font-size: 1.8rem;
+    z-index: 99;
+
+    span:hover {
+      cursor: pointer;
+    }
 
     fieldset {
       @include center;
@@ -32,14 +38,24 @@
         border-radius: 10px;
         border: none;
         font-size: 1rem;
+
+        &:focus {
+          outline: none;
+        }
       }
 
       i {
         font-size: 1.5rem;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
   }
 }
+
+// Main section
 
 #main-section {
   position: relative;
