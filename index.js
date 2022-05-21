@@ -1,3 +1,5 @@
+import getDrinks from "./modules/getDrinks.js";
+
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
 const mainSection = document.getElementById("main-section");
@@ -44,3 +46,5 @@ window.addEventListener("resize", () => {
     document.location.reload();
   }
 });
+
+getDrinks();
