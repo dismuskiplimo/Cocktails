@@ -1,9 +1,16 @@
+import getDrinks from "./modules/getDrinks.js";
+
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
 const mainSection = document.getElementById("main-section");
+const categoriesSpan = document.getElementById("categories-span");
+const categoriesSection = document.getElementById("categories");
+const navBar = document.querySelector("nav");
 
 closeMenuBtn.style.display = "none";
+categoriesSection.style.display = "none";
 
+// Mobile menu (hamburger menu) event listener
 mobileMenuIcon.addEventListener("click", () => {
   const mobileMenu = document.createElement("div");
   mobileMenu.innerHTML = `<div id="mobile-logo">
@@ -24,14 +31,13 @@ mobileMenuIcon.addEventListener("click", () => {
 </div>`;
 
   mobileMenu.classList.add("mobile-div");
-
   mainSection.appendChild(mobileMenu);
-
   mobileMenuIcon.style.display = "none";
   closeMenuBtn.style.display = "block";
   closeMenuBtn.classList.add("menu");
 });
 
+// Arrow up icon event listener on mobile menu
 closeMenuBtn.addEventListener("click", () => {
   const mobileMenuActive = document.querySelector(".mobile-div");
   mobileMenuActive.remove();
@@ -39,8 +45,17 @@ closeMenuBtn.addEventListener("click", () => {
   mobileMenuIcon.style.display = "block";
 });
 
+// While the mobile menu is open and when the user resizes the screen
 window.addEventListener("resize", () => {
   if (window.innerWidth < 610) {
     document.location.reload();
   }
 });
+
+// Categories link event listener
+categoriesSpan.addEventListener("click", () => {
+  mainSection.style.display = "none";
+  categoriesSection.style.display = "grid";
+});
+
+getDrinks();

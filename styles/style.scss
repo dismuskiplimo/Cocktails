@@ -197,3 +197,89 @@
 .menu {
   @include icon;
 }
+
+// Categories section
+
+#categories {
+  @include center;
+
+  height: 100vh;
+  background: #000;
+  
+
+  #grid-container {
+  width: 80vw;
+  max-width: 1600px;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 30px;
+
+  div {
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+
+    h2 {
+      position: absolute;
+      bottom: 10%;
+      right: 5%;
+      z-index: 99;
+      font-size: 2.2rem;
+    }
+
+    .image-mask, .image-mask2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-mask {
+      background: rgba(80, 109, 85, 0.5);
+    }
+
+    .image-mask2 {
+      background: rgba(105, 61, 15, 0.5);
+    }
+  }
+
+  #cocktail-drinks {
+    grid-column: 1 / 4;
+    grid-row: 1 / 3;
+
+    img {
+      object-position: top;
+    }
+
+    h2 {
+      font-size: 8rem;
+    }
+  }
+
+  #ordinary-drinks {
+    grid-row: 1;
+  }
+
+  #part-drinks {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  #non-alcoholic-drinks {
+    img {
+      object-position: 0 70%;
+    }
+  }
+}
+}
