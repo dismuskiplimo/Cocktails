@@ -298,4 +298,79 @@ body {
 .menu:hover {
   cursor: pointer;
 }
+
+#categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+#categories #grid-container {
+  width: 80vw;
+  max-width: 1600px;
+  height: 90vh;
+  border: solid black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+}
+
+#categories #grid-container div {
+  position: relative;
+}
+
+#categories #grid-container div img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+}
+
+#categories #grid-container div h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#categories #grid-container #cocktail-drinks {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1 / 3;
+}
+
+#categories #grid-container #cocktail-drinks img {
+  -o-object-position: top;
+     object-position: top;
+}
+
+#categories #grid-container #ordinary-drinks {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+#categories #grid-container #part-drinks {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+#categories #grid-container #non-alcoholic-drinks img {
+  -o-object-position: 0 70%;
+     object-position: 0 70%;
+}
 /*# sourceMappingURL=style.css.map */

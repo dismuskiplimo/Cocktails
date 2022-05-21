@@ -5,6 +5,7 @@ const closeMenuBtn = document.querySelector(".fa-angle-up");
 const mainSection = document.getElementById("main-section");
 const categoriesSpan = document.getElementById("categories-span");
 const categoriesSection = document.getElementById("categories");
+const navBar = document.querySelector("nav");
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";
@@ -54,7 +55,7 @@ window.addEventListener("resize", () => {
 // Categories link event listener
 categoriesSpan.addEventListener("click", () => {
   mainSection.style.display = "none";
-  categoriesSection.style.display = "block";
+  categoriesSection.style.display = "grid";
 });
 
 getDrinks();
