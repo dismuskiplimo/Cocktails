@@ -204,18 +204,25 @@
   @include center;
 
   height: 100vh;
+  background: #000;
+  
 
   #grid-container {
-    width: 80vw;
+  width: 80vw;
   max-width: 1600px;
   height: 90vh;
-  border: solid black;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 30px;
 
   div {
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     img {
       width: 100%;
@@ -226,8 +233,24 @@
 
     h2 {
       position: absolute;
-      top: 0;
-      left: 0;
+      bottom: 10%;
+      right: 5%;
+      z-index: 99;
+      font-size: 2.2rem;
+    }
+
+    .image-mask, .image-mask2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image-mask {
+      background: rgba(80, 109, 85, 0.5);
+    }
+
+    .image-mask2 {
+      background: rgba(105, 61, 15, 0.5);
     }
   }
 
@@ -237,6 +260,10 @@
 
     img {
       object-position: top;
+    }
+
+    h2 {
+      font-size: 8rem;
     }
   }
 

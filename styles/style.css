@@ -310,23 +310,30 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 100vh;
+  background: #000;
 }
 
 #categories #grid-container {
   width: 80vw;
   max-width: 1600px;
   height: 90vh;
-  border: solid black;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
+  row-gap: 30px;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
 }
 
 #categories #grid-container div {
   position: relative;
+}
+
+#categories #grid-container div:hover {
+  cursor: pointer;
 }
 
 #categories #grid-container div img {
@@ -339,8 +346,24 @@ body {
 
 #categories #grid-container div h2 {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 10%;
+  right: 5%;
+  z-index: 99;
+  font-size: 2.2rem;
+}
+
+#categories #grid-container div .image-mask, #categories #grid-container div .image-mask2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#categories #grid-container div .image-mask {
+  background: rgba(80, 109, 85, 0.5);
+}
+
+#categories #grid-container div .image-mask2 {
+  background: rgba(105, 61, 15, 0.5);
 }
 
 #categories #grid-container #cocktail-drinks {
@@ -355,6 +378,10 @@ body {
 #categories #grid-container #cocktail-drinks img {
   -o-object-position: top;
      object-position: top;
+}
+
+#categories #grid-container #cocktail-drinks h2 {
+  font-size: 8rem;
 }
 
 #categories #grid-container #ordinary-drinks {
