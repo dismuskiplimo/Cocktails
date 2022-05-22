@@ -6,6 +6,7 @@ const mainSection = document.getElementById("main-section");
 const categoriesSpan = document.getElementById("categories-span");
 const categoriesSection = document.getElementById("categories");
 const navBar = document.querySelector("nav");
+const leftArrow = document.querySelector(".fa-arrow-left");
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";
@@ -56,6 +57,12 @@ window.addEventListener("resize", () => {
 categoriesSpan.addEventListener("click", () => {
   mainSection.style.display = "none";
   categoriesSection.style.display = "grid";
+});
+
+// Left arrow event listener
+leftArrow.addEventListener("click", () => {
+  categoriesSection.style.display = "none";
+  mainSection.style.display = "block";
 });
 
 getDrinks();

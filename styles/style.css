@@ -313,6 +313,17 @@ body {
   background: #000;
 }
 
+#categories .fa-arrow-left {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 2rem;
+}
+
+#categories .fa-arrow-left:hover {
+  cursor: pointer;
+}
+
 #categories #grid-container {
   width: 80vw;
   max-width: 1600px;

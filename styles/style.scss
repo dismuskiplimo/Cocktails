@@ -205,6 +205,17 @@
 
   height: 100vh;
   background: #000;
+
+  .fa-arrow-left {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
   
 
   #grid-container {
