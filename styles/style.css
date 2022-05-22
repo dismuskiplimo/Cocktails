@@ -28,7 +28,7 @@ body {
           flex-direction: column;
   gap: 100px;
   background: rgba(0, 0, 0, 0.9);
-  height: 35vh;
+  padding: 25px 0;
   width: 100%;
 }
 
@@ -313,6 +313,43 @@ body {
   background: #000;
 }
 
+@media (max-width: 600px) {
+  #categories {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+  }
+}
+
+#categories .fa-arrow-left {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 2rem;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories .fa-arrow-left {
+    left: 3%;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories .fa-arrow-left {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+  }
+}
+
+#categories .fa-arrow-left:hover {
+  cursor: pointer;
+}
+
 #categories #grid-container {
   width: 80vw;
   max-width: 1600px;
@@ -328,12 +365,42 @@ body {
           column-gap: 30px;
 }
 
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container {
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
+    row-gap: 15px;
+    -webkit-column-gap: 15px;
+            column-gap: 15px;
+    width: 90%;
+    height: 100%;
+  }
+}
+
 #categories #grid-container div {
   position: relative;
 }
 
 #categories #grid-container div:hover {
   cursor: pointer;
+}
+
+#categories #grid-container div:hover h2, #categories #grid-container div:hover .image-mask, #categories #grid-container div:hover .image-mask2 {
+  visibility: hidden;
 }
 
 #categories #grid-container div img {
@@ -352,18 +419,37 @@ body {
   font-size: 2.2rem;
 }
 
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container div h2 {
+    font-size: 1.8rem;
+    left: 0;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container div h2 {
+    font-size: 1rem;
+    left: 0;
+    bottom: 5%;
+    padding: 5px;
+  }
+}
+
 #categories #grid-container div .image-mask, #categories #grid-container div .image-mask2 {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
 }
 
 #categories #grid-container div .image-mask {
-  background: rgba(80, 109, 85, 0.5);
+  background: rgba(112, 112, 112, 0.5);
 }
 
 #categories #grid-container div .image-mask2 {
-  background: rgba(105, 61, 15, 0.5);
+  background: rgba(81, 128, 77, 0.3);
 }
 
 #categories #grid-container #cocktail-drinks {
@@ -375,6 +461,18 @@ body {
   grid-row: 1 / 3;
 }
 
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container #cocktail-drinks {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container #cocktail-drinks {
+    grid-column: 1 / -1;
+  }
+}
+
 #categories #grid-container #cocktail-drinks img {
   -o-object-position: top;
      object-position: top;
@@ -384,9 +482,55 @@ body {
   font-size: 8rem;
 }
 
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container #cocktail-drinks h2 {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container #cocktail-drinks h2 {
+    font-size: 2rem;
+  }
+}
+
 #categories #grid-container #ordinary-drinks {
   -ms-grid-row: 1;
   grid-row: 1;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container #ordinary-drinks {
+    grid-column: 1 / -1;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container #ordinary-drinks {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container #alcoholic-drinks {
+    grid-column: 3 / -1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container #alcoholic-drinks {
+    grid-column: 2 / -1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
 }
 
 #categories #grid-container #part-drinks {
@@ -396,8 +540,36 @@ body {
   grid-row: 2;
 }
 
+@media (max-width: 600px) {
+  #categories #grid-container #part-drinks {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 5;
+    grid-row: 5;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  #categories #grid-container #non-alcoholic-drinks {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+}
+
 #categories #grid-container #non-alcoholic-drinks img {
   -o-object-position: 0 70%;
      object-position: 0 70%;
+}
+
+@media (max-width: 600px) {
+  #categories #grid-container #liqueur-drinks {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 5;
+    grid-row: 5;
+  }
 }
 /*# sourceMappingURL=style.css.map */
