@@ -347,6 +347,10 @@ body {
   cursor: pointer;
 }
 
+#categories #grid-container div:hover h2, #categories #grid-container div:hover .image-mask, #categories #grid-container div:hover .image-mask2 {
+  visibility: hidden;
+}
+
 #categories #grid-container div img {
   width: 100%;
   height: 100%;
@@ -367,14 +371,16 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 #categories #grid-container div .image-mask {
-  background: rgba(80, 109, 85, 0.5);
+  background: rgba(112, 112, 112, 0.5);
 }
 
 #categories #grid-container div .image-mask2 {
-  background: rgba(105, 61, 15, 0.5);
+  background: rgba(81, 128, 77, 0.3);
 }
 
 #categories #grid-container #cocktail-drinks {
