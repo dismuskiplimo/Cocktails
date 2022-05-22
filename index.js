@@ -5,7 +5,6 @@ const closeMenuBtn = document.querySelector(".fa-angle-up");
 const mainSection = document.getElementById("main-section");
 const categoriesSpan = document.getElementById("categories-span");
 const categoriesSection = document.getElementById("categories");
-const navBar = document.querySelector("nav");
 const leftArrow = document.querySelector(".fa-arrow-left");
 
 closeMenuBtn.style.display = "none";
@@ -19,7 +18,7 @@ mobileMenuIcon.addEventListener("click", () => {
   <span>Cocktails</span>
 </div>
 <div id="mobile-cocktails-list">
-  <span>Categories</span>
+  <span id="mobile-categories">Categories</span>
   <fieldset>
     <input
       type="search"
@@ -36,6 +35,12 @@ mobileMenuIcon.addEventListener("click", () => {
   mobileMenuIcon.style.display = "none";
   closeMenuBtn.style.display = "block";
   closeMenuBtn.classList.add("menu");
+
+  const mobileCategories = document.getElementById("mobile-categories");
+  mobileCategories.addEventListener("click", () => {
+    mainSection.style.display = "none";
+    categoriesSection.style.display = "flex";
+  });
 });
 
 // Arrow up icon event listener on mobile menu
