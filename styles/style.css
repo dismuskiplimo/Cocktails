@@ -565,4 +565,8 @@ body {
   width: 200px;
   height: 200px;
 }
+
+#cocktail-details .details {
+  color: #000;
+}
 /*# sourceMappingURL=style.css.map */

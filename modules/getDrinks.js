@@ -1,8 +1,11 @@
+import { getDetails, cocktailDetails } from "./getDetails.js";
+
 const cocktailsSection = document.getElementById("cocktails");
 const gridContainer = document.getElementById("grid-container");
 const mainSection = document.getElementById("main-section");
 const categoriesSection = document.getElementById("categories");
 
+cocktailDetails.style.display = "none";
 cocktailsSection.style.display = "none";
 
 const getDrinks = (e) => {
@@ -35,24 +38,28 @@ const getDrinks = (e) => {
   fetch(`https://thecocktaildb.com/api/json/v1/1/filter.php?${query2}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       data.drinks.forEach((item) => {
         const cocktailsDiv = document.createElement("div");
         cocktailsDiv.innerHTML = `
-      <div class='cocktails' id=${item.strDrink}>
-      <img src=${item.strDrinkThumb} alt="drink">
+      <div class='cocktails'>
+      <img src=${item.strDrinkThumb} alt="drink" id=${item.idDrink}>
       <h2>${item.strDrink}</h2>
       </div>
       `;
         cocktailsSection.appendChild(cocktailsDiv);
       });
+      const cocktailDrinks = [...document.querySelectorAll(".cocktails > img")];
+      cocktailDrinks.forEach((drink) =>
+        drink.addEventListener("click", (e) => {
+          cocktailsSection.style.display = "none";
+          cocktailDetails.style.display = "block";
+          getDetails(e);
+        })
+      );
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
-
-  const cocktailDrinks = [...document.querySelectorAll(".cocktails")];
-  cocktailDrinks.addEventListener("click", (e) => {});
 };
 
 gridContainer.addEventListener("click", (e) => {
