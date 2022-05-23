@@ -371,16 +371,6 @@
     }
   }
 
-  #part-drinks {
-    grid-column: 4;
-    grid-row: 2;
-
-    @include media-sm {
-      grid-column: 2;
-      grid-row: 5;
-    }
-  }
-
   #non-alcoholic-drinks {
     @include media-md {
       grid-column: 1 / 3;
@@ -399,4 +389,21 @@
     }
   }
 }
+}
+
+// Cocktails section
+
+#cocktails {
+  i {
+    color: darkorchid;
+  }
+
+  .cocktails {
+    color: #000;
+
+    img {
+      width: 200px;
+    height: 200px;
+    }
+  }
 }
