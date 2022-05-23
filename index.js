@@ -1,10 +1,8 @@
-import getDrinks from "./modules/getDrinks.js";
+import { mainSection, categoriesSection } from "./modules/getDrinks.js";
 
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
-const mainSection = document.getElementById("main-section");
 const categoriesSpan = document.getElementById("categories-span");
-const categoriesSection = document.getElementById("categories");
 const leftArrow = document.querySelector(".fa-arrow-left");
 
 closeMenuBtn.style.display = "none";
@@ -69,5 +67,3 @@ leftArrow.addEventListener("click", () => {
   categoriesSection.style.display = "none";
   mainSection.style.display = "block";
 });
-
-getDrinks();

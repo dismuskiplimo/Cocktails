@@ -371,16 +371,6 @@
     }
   }
 
-  #part-drinks {
-    grid-column: 4;
-    grid-row: 2;
-
-    @include media-sm {
-      grid-column: 2;
-      grid-row: 5;
-    }
-  }
-
   #non-alcoholic-drinks {
     @include media-md {
       grid-column: 1 / 3;
