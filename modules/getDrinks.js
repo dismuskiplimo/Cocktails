@@ -73,4 +73,4 @@ gridContainer.addEventListener("click", (e) => {
   getDrinks(e);
 });
 
-export { mainSection, categoriesSection, leftArrow };
+export { mainSection, categoriesSection, leftArrow, cocktailsSection };

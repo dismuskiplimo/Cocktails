@@ -1,8 +1,14 @@
-import { mainSection, categoriesSection } from "./getDrinks.js";
+import { cocktailsSection } from "./getDrinks.js";
 
 const cocktailDetails = document.getElementById("cocktail-details");
+const detailsArrow = document.getElementById("details-arrow");
 
 const getDetails = (e) => {
+  detailsArrow.addEventListener("click", () => {
+    cocktailDetails.style.display = "none";
+    cocktailsSection.style.display = "block";
+  });
+
   let query1 = e.target.id;
 
   fetch(`https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${query1}`)
