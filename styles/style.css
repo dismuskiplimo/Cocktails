@@ -557,6 +557,10 @@ body {
   }
 }
 
+#cocktails i {
+  color: darkorchid;
+}
+
 #cocktails .cocktails {
   color: #000;
 }
@@ -568,5 +572,9 @@ body {
 
 #cocktail-details .details {
   color: #000;
+}
+
+#cocktail-details i {
+  color: darkorchid;
 }
 /*# sourceMappingURL=style.css.map */

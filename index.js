@@ -1,9 +1,12 @@
-import { mainSection, categoriesSection } from "./modules/getDrinks.js";
+import {
+  mainSection,
+  categoriesSection,
+  leftArrow,
+} from "./modules/getDrinks.js";
 
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
 const categoriesSpan = document.getElementById("categories-span");
-const leftArrow = document.querySelector(".fa-arrow-left");
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";

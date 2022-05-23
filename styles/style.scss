@@ -394,6 +394,10 @@
 // Cocktails section
 
 #cocktails {
+  i {
+    color: darkorchid;
+  }
+
   .cocktails {
     color: #000;
 
@@ -409,5 +413,9 @@
 #cocktail-details {
   .details {
     color: #000;
+  }
+
+  i {
+    color: darkorchid;
   }
 }
