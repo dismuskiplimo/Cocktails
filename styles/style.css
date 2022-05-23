@@ -556,4 +556,13 @@ body {
     grid-row: 5;
   }
 }
+
+#cocktails .cocktails {
+  color: #000;
+}
+
+#cocktails .cocktails img {
+  width: 200px;
+  height: 200px;
+}
 /*# sourceMappingURL=style.css.map */

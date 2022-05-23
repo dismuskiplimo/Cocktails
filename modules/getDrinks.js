@@ -36,10 +36,23 @@ const getDrinks = (e) => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      data.drinks.forEach((item) => {
+        const cocktailsDiv = document.createElement("div");
+        cocktailsDiv.innerHTML = `
+      <div class='cocktails' id=${item.strDrink}>
+      <img src=${item.strDrinkThumb} alt="drink">
+      <h2>${item.strDrink}</h2>
+      </div>
+      `;
+        cocktailsSection.appendChild(cocktailsDiv);
+      });
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
+
+  const cocktailDrinks = [...document.querySelectorAll(".cocktails")];
+  cocktailDrinks.addEventListener("click", (e) => {});
 };
 
 gridContainer.addEventListener("click", (e) => {
