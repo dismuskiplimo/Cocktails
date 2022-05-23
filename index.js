@@ -2,11 +2,25 @@ import {
   mainSection,
   categoriesSection,
   leftArrow,
+  getDrinks,
+  cocktailsSection,
 } from "./modules/getDrinks.js";
 
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
 const categoriesSpan = document.getElementById("categories-span");
+const gridContainer = document.getElementById("grid-container");
+
+gridContainer.addEventListener("click", (e) => {
+  getDrinks(e);
+
+  const categoriesArrow = document.getElementById("cocktails-arrow");
+  categoriesArrow.addEventListener("click", () => {
+    cocktailsSection.style.display = "none";
+    categoriesSection.style.display = "flex";
+    getDrinks(e);
+  });
+});
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";

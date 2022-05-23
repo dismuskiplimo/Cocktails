@@ -1,23 +1,15 @@
-import { getDetails, cocktailDetails } from "./getDetails.js";
+import { getDetails } from "./getDetails.js";
 
 const cocktailsSection = document.getElementById("cocktails");
-const gridContainer = document.getElementById("grid-container");
 const mainSection = document.getElementById("main-section");
 const categoriesSection = document.getElementById("categories");
-const categoriesArrow = document.getElementById("cocktails-arrow");
 const leftArrow = document.querySelector(".fa-arrow-left");
 
-cocktailDetails.style.display = "none";
 cocktailsSection.style.display = "none";
 
 const getDrinks = (e) => {
   categoriesSection.style.display = "none";
   cocktailsSection.style.display = "block";
-
-  categoriesArrow.addEventListener("click", () => {
-    cocktailsSection.style.display = "none";
-    categoriesSection.style.display = "flex";
-  });
 
   let query2;
 
@@ -54,23 +46,27 @@ const getDrinks = (e) => {
       </div>
       `;
         cocktailsSection.appendChild(cocktailsDiv);
+        const cocktailDrinks = [
+          ...document.querySelectorAll(".cocktails > img"),
+        ];
+        cocktailDrinks.forEach((drink) =>
+          drink.addEventListener("click", (e) => {
+            cocktailsSection.style.display = "none";
+            cocktailDetails.style.display = "block";
+            getDetails(e);
+          })
+        );
       });
-      const cocktailDrinks = [...document.querySelectorAll(".cocktails > img")];
-      cocktailDrinks.forEach((drink) =>
-        drink.addEventListener("click", (e) => {
-          cocktailsSection.style.display = "none";
-          cocktailDetails.style.display = "block";
-          getDetails(e);
-        })
-      );
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
 };
 
-gridContainer.addEventListener("click", (e) => {
-  getDrinks(e);
-});
-
-export { mainSection, categoriesSection, leftArrow, cocktailsSection };
+export {
+  mainSection,
+  categoriesSection,
+  leftArrow,
+  cocktailsSection,
+  getDrinks,
+};
