@@ -3,20 +3,34 @@ import {
   categoriesSection,
   leftArrow,
   getDrinks,
-  cocktailsSection,
 } from "./modules/getDrinks.js";
+
+import getCocktailName from "./modules/searchCocktail.js";
 
 const mobileMenuIcon = document.querySelector(".fa-bars");
 const closeMenuBtn = document.querySelector(".fa-angle-up");
 const categoriesSpan = document.getElementById("categories-span");
 const gridContainer = document.getElementById("grid-container");
-
-gridContainer.addEventListener("click", (e) => {
-  getDrinks(e);
-});
+const search = document.getElementById("search");
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";
+
+// Search event listener
+search.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    if (search.value === "") {
+      return;
+    }
+    getCocktailName(search.value.trim());
+    search.value = "";
+  }
+});
+
+// Categories divs event listener
+gridContainer.addEventListener("click", (e) => {
+  getDrinks(e);
+});
 
 // Mobile menu (hamburger menu) event listener
 mobileMenuIcon.addEventListener("click", () => {

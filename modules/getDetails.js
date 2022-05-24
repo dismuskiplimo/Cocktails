@@ -1,4 +1,4 @@
-import { categoriesSection, cocktailsSection } from "./getDrinks.js";
+import { cocktailsSection } from "./getDrinks.js";
 
 const cocktailDetails = document.getElementById("details");
 const detailsDiv = document.querySelector(".details");
