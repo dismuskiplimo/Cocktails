@@ -423,18 +423,58 @@
 // Cocktails section
 
 #cocktails {
-  #cocktails-arrow {
-    color: darkorchid;
+  @include center;
+
+  background: #000;
+
+  @include media-sm {
+    padding: 15px;
   }
 
-  .cocktails {
-    color: #000;
+  #cocktails-arrow {
+    position: sticky;
+    top: 3%;
+    left: 5%;
 
-    .cocktails-image {
-      width: 200px;
-      height: 200px;
+    @include media-sm {
+      font-size: 1.5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
     }
   }
+
+  .cocktails-grid {
+    display: grid;
+    justify-items: center;
+
+    @include media-sm {
+      grid-template-columns: 1fr;
+    }
+
+  .cocktails {
+    @include media-sm {
+      margin-bottom: 50px;
+    }
+    
+    .cocktails-image {
+      @include media-sm {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    h2 {
+      @include media-sm {
+        font-size: 1.2rem;
+        width: 250px;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+}
 }
 
 // Details section
@@ -448,5 +488,12 @@
     &:hover {
       cursor: pointer;
     }
+  }
+}
+
+.error {
+  @include media-sm {
+    padding: 20px;
+    font-size: 1.2rem;
   }
 }
