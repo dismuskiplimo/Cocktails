@@ -13,6 +13,7 @@ const closeMenuBtn = document.querySelector(".fa-angle-up");
 const categoriesSpan = document.getElementById("categories-span");
 const logo = document.getElementById("logo");
 const searchIcon = document.querySelector(".fa-search");
+const regex = /^\s+$/;
 
 closeMenuBtn.style.display = "none";
 categoriesSection.style.display = "none";
@@ -24,7 +25,7 @@ const search = document.getElementById("search");
 // Search event listener
 search.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    if (search.value === "") {
+    if (search.value === "" || search.value.match(regex)) {
       return;
     }
     getCocktailName(search.value.trim());
@@ -33,7 +34,7 @@ search.addEventListener("keypress", (e) => {
 });
 
 searchIcon.addEventListener("click", () => {
-  if (search.value === "") {
+  if (search.value === "" || search.value.match(regex)) {
     return;
   }
   getCocktailName(search.value.trim());
@@ -56,7 +57,7 @@ mobileMenuIcon.addEventListener("click", () => {
       name="search"
       placeholder="Search cocktail..."
     />
-    <i class="fas fa-search"></i>
+    <i class="fas fa-search" id="mobile-search-icon"></i>
   </fieldset>
 </div>`;
 
@@ -70,6 +71,26 @@ mobileMenuIcon.addEventListener("click", () => {
   mobileCategories.addEventListener("click", () => {
     mainSection.style.display = "none";
     categoriesSection.style.display = "flex";
+  });
+
+  const mobileSearch = document.getElementById("mobile-search");
+  mobileSearch.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      if (mobileSearch.value === "" || mobileSearch.value.match(regex)) {
+        return;
+      }
+      getCocktailName(mobileSearch.value.trim());
+      mobileSearch.value = "";
+    }
+  });
+
+  const mobileSearchIcon = document.getElementById("mobile-search-icon");
+  mobileSearchIcon.addEventListener("click", () => {
+    if (mobileSearch.value === "" || mobileSearch.value.match(regex)) {
+      return;
+    }
+    getCocktailName(mobileSearch.value.trim());
+    mobileSearch.value = "";
   });
 });
 
