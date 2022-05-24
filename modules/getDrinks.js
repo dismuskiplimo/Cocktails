@@ -1,36 +1,105 @@
-import { getDetails } from "./getDetails.js";
+const gridContainer = document.getElementById('grid-container');
+const cocktailsSection = document.getElementById('cocktails');
+const mainSection = document.getElementById('main-section');
+const categoriesSection = document.getElementById('categories');
+const cocktailDetails = document.getElementById('details');
+const leftArrow = document.querySelector('.fa-arrow-left');
 
-const cocktailsSection = document.getElementById("cocktails");
-const mainSection = document.getElementById("main-section");
-const categoriesSection = document.getElementById("categories");
-const leftArrow = document.querySelector(".fa-arrow-left");
+const detailsDiv = document.querySelector('.details');
 
-cocktailsSection.style.display = "none";
+const getDetails = (e) => {
+  const query1 = e.target.id;
+
+  const detailsArrow = document.getElementById('details-arrow');
+
+  detailsArrow.addEventListener('click', () => {
+    detailsDiv.innerHTML = '';
+    cocktailDetails.style.display = 'none';
+    cocktailsSection.style.display = 'block';
+  });
+
+  fetch(`https://thecocktaildb.com/api/json/v1/1/lookup.php?i=${query1}`)
+    .then((res) => res.json())
+    .then((data) => {
+      data.drinks.forEach((drink) => {
+        const arrayOfIngredients = [];
+
+        arrayOfIngredients.push(
+          drink.strIngredient1,
+          drink.strIngredient2,
+          drink.strIngredient3,
+          drink.strIngredient4,
+          drink.strIngredient5,
+          drink.strIngredient6,
+          drink.strIngredient7,
+          drink.strIngredient8,
+          drink.strIngredient9,
+          drink.strIngredient10,
+          drink.strIngredient11,
+          drink.strIngredient12,
+          drink.strIngredient13,
+          drink.strIngredient14,
+          drink.strIngredient15,
+        );
+
+        detailsDiv.innerHTML = `
+      <img alt="drink" src=${drink.strDrinkThumb}>
+      <h2>${drink.strDrink}</h2>
+      <p>${drink.strInstructions}</p>
+      <ul></ul>
+      `;
+
+        const list = document.querySelector('ul');
+
+        const ingredients = arrayOfIngredients.filter(
+          (ingredient) => ingredient !== null,
+        );
+        ingredients.forEach((ingredient) => {
+          const li = document.createElement('li');
+          li.textContent = ingredient;
+          list.appendChild(li);
+        });
+      });
+    })
+    .catch();
+};
 
 const getDrinks = (e) => {
-  categoriesSection.style.display = "none";
-  cocktailsSection.style.display = "block";
+  categoriesSection.style.display = 'none';
+  cocktailsSection.style.display = 'block';
+  cocktailsSection.innerHTML = '<i class="fas fa-arrow-left" id="cocktails-arrow"></i>';
+
+  const cocktailsArrow = document.getElementById('cocktails-arrow');
+
+  cocktailsArrow.addEventListener('click', () => {
+    cocktailsSection.innerHTML = '';
+    cocktailsSection.style.display = 'none';
+    categoriesSection.style.display = 'flex';
+  });
 
   let query2;
 
   switch (e.target.id) {
-    case "image-cocktail-drinks":
-      query2 = "c=Cocktail";
+    case 'image-cocktail-drinks':
+      query2 = 'c=Cocktail';
       break;
-    case "image-ordinary-drinks":
-      query2 = "c=Ordinary_Drink";
+    case 'image-ordinary-drinks':
+      query2 = 'c=Ordinary_Drink';
       break;
-    case "image-shot-drinks":
-      query2 = "c=Shot";
+    case 'image-shot-drinks':
+      query2 = 'c=Shot';
       break;
-    case "image-alcoholic-drinks":
-      query2 = "a=Alcoholic";
+    case 'image-alcoholic-drinks':
+      query2 = 'a=Alcoholic';
       break;
-    case "image-non-alcoholic-drinks":
-      query2 = "a=Non_Alcoholic";
+    case 'image-non-alcoholic-drinks':
+      query2 = 'a=Non_Alcoholic';
       break;
-    case "image-liqueur-drinks":
-      query2 = "c=Homemade_Liqueur";
+    case 'image-liqueur-drinks':
+      query2 = 'c=Homemade_Liqueur';
+      break;
+    default:
+      query2 = 'c=Cocktail';
       break;
   }
 
@@ -38,35 +107,37 @@ const getDrinks = (e) => {
     .then((res) => res.json())
     .then((data) => {
       data.drinks.forEach((item) => {
-        const cocktailsDiv = document.createElement("div");
+        const cocktailsDiv = document.createElement('div');
         cocktailsDiv.innerHTML = `
       <div class='cocktails'>
-      <img src=${item.strDrinkThumb} alt="drink" id=${item.idDrink}>
+      <img src=${item.strDrinkThumb} alt="drink" id=${item.idDrink} class="cocktails-image">
       <h2>${item.strDrink}</h2>
       </div>
       `;
         cocktailsSection.appendChild(cocktailsDiv);
-        const cocktailDrinks = [
-          ...document.querySelectorAll(".cocktails > img"),
-        ];
-        cocktailDrinks.forEach((drink) =>
-          drink.addEventListener("click", (e) => {
-            cocktailsSection.style.display = "none";
-            cocktailDetails.style.display = "block";
-            getDetails(e);
-          })
-        );
       });
+      const cocktailDrinks = [...document.querySelectorAll('.cocktails > img')];
+
+      cocktailDrinks.forEach((drink) => drink.addEventListener('click', (e) => {
+        cocktailsSection.style.display = 'none';
+        cocktailDetails.style.display = 'block';
+        getDetails(e);
+      }));
     })
-    .catch((err) => {
-      console.log(`error ${err}`);
-    });
+    .catch();
 };
 
+// Categories divs event listener
+gridContainer.addEventListener('click', (e) => {
+  getDrinks(e);
+});
+
 export {
-  mainSection,
-  categoriesSection,
   leftArrow,
-  cocktailsSection,
   getDrinks,
+  categoriesSection,
+  cocktailsSection,
+  cocktailDetails,
+  mainSection,
+  getDetails,
 };

@@ -1,33 +1,38 @@
 import {
-  mainSection,
   categoriesSection,
-  leftArrow,
-  getDrinks,
   cocktailsSection,
-} from "./modules/getDrinks.js";
+  cocktailDetails,
+  leftArrow,
+  mainSection,
+} from './modules/getDrinks.js';
 
-const mobileMenuIcon = document.querySelector(".fa-bars");
-const closeMenuBtn = document.querySelector(".fa-angle-up");
-const categoriesSpan = document.getElementById("categories-span");
-const gridContainer = document.getElementById("grid-container");
+import getCocktailName from './modules/searchCocktail.js';
 
-gridContainer.addEventListener("click", (e) => {
-  getDrinks(e);
+const mobileMenuIcon = document.querySelector('.fa-bars');
+const closeMenuBtn = document.querySelector('.fa-angle-up');
+const categoriesSpan = document.getElementById('categories-span');
 
-  const categoriesArrow = document.getElementById("cocktails-arrow");
-  categoriesArrow.addEventListener("click", () => {
-    cocktailsSection.style.display = "none";
-    categoriesSection.style.display = "flex";
-    getDrinks(e);
-  });
+closeMenuBtn.style.display = 'none';
+categoriesSection.style.display = 'none';
+cocktailsSection.style.display = 'none';
+cocktailDetails.style.display = 'none';
+
+const search = document.getElementById('search');
+
+// Search event listener
+search.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    if (search.value === '') {
+      return;
+    }
+    getCocktailName(search.value.trim());
+    search.value = '';
+  }
 });
 
-closeMenuBtn.style.display = "none";
-categoriesSection.style.display = "none";
-
 // Mobile menu (hamburger menu) event listener
-mobileMenuIcon.addEventListener("click", () => {
-  const mobileMenu = document.createElement("div");
+mobileMenuIcon.addEventListener('click', () => {
+  const mobileMenu = document.createElement('div');
   mobileMenu.innerHTML = `<div id="mobile-logo">
   <i class="fas fa-cocktail"></i>
   <span>Cocktails</span>
@@ -45,42 +50,42 @@ mobileMenuIcon.addEventListener("click", () => {
   </fieldset>
 </div>`;
 
-  mobileMenu.classList.add("mobile-div");
+  mobileMenu.classList.add('mobile-div');
   mainSection.appendChild(mobileMenu);
-  mobileMenuIcon.style.display = "none";
-  closeMenuBtn.style.display = "block";
-  closeMenuBtn.classList.add("menu");
+  mobileMenuIcon.style.display = 'none';
+  closeMenuBtn.style.display = 'block';
+  closeMenuBtn.classList.add('menu');
 
-  const mobileCategories = document.getElementById("mobile-categories");
-  mobileCategories.addEventListener("click", () => {
-    mainSection.style.display = "none";
-    categoriesSection.style.display = "flex";
+  const mobileCategories = document.getElementById('mobile-categories');
+  mobileCategories.addEventListener('click', () => {
+    mainSection.style.display = 'none';
+    categoriesSection.style.display = 'flex';
   });
 });
 
 // Arrow up icon event listener on mobile menu
-closeMenuBtn.addEventListener("click", () => {
-  const mobileMenuActive = document.querySelector(".mobile-div");
+closeMenuBtn.addEventListener('click', () => {
+  const mobileMenuActive = document.querySelector('.mobile-div');
   mobileMenuActive.remove();
-  closeMenuBtn.style.display = "none";
-  mobileMenuIcon.style.display = "block";
+  closeMenuBtn.style.display = 'none';
+  mobileMenuIcon.style.display = 'block';
 });
 
 // While the mobile menu is open and when the user resizes the screen
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   if (window.innerWidth < 610) {
     document.location.reload();
   }
 });
 
 // Categories link event listener
-categoriesSpan.addEventListener("click", () => {
-  mainSection.style.display = "none";
-  categoriesSection.style.display = "grid";
+categoriesSpan.addEventListener('click', () => {
+  mainSection.style.display = 'none';
+  categoriesSection.style.display = 'grid';
 });
 
 // Left arrow event listener
-leftArrow.addEventListener("click", () => {
-  categoriesSection.style.display = "none";
-  mainSection.style.display = "block";
+leftArrow.addEventListener('click', () => {
+  categoriesSection.style.display = 'none';
+  mainSection.style.display = 'block';
 });
