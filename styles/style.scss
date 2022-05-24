@@ -233,177 +233,179 @@
       cursor: pointer;
     }
   }
-  
 
   #grid-container {
-  width: 80vw;
-  max-width: 1600px;
-  height: 90vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  row-gap: 30px;
-  column-gap: 30px;
+    width: 80vw;
+    max-width: 1600px;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 30px;
+    column-gap: 30px;
 
-  @include media-md {
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 20px;
-    column-gap: 20px;
-  }
+    @include media-md {
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 20px;
+      column-gap: 20px;
+    }
 
-  @include media-sm {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    row-gap: 15px;
-    column-gap: 15px;
-    width: 90%;
-    height: 100%;
-  }
+    @include media-sm {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      row-gap: 15px;
+      column-gap: 15px;
+      width: 90%;
+      height: 100%;
+    }
 
-  div {
-    position: relative;
+    .drinks {
+      position: relative;
 
-    &:hover {
-      cursor: pointer;
+      h2 {
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
+        z-index: 99;
+        font-size: 2.2rem;
 
-      h2, .image-mask, .image-mask2 {
-        visibility: hidden;
+        @include media-md {
+          font-size: 1.8rem;
+          left: 0;
+          padding: 8px;
+        }
+
+        @include media-sm {
+          font-size: 1rem;
+          left: 0;
+          bottom: 5%;
+          padding: 5px;
+        }
+      }
+
+      .image-mask,
+      .image-mask2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(1px);
+      }
+
+      .image-mask {
+        background: rgba(112, 112, 112, 0.5);
+      }
+
+      .image-mask2 {
+        background: rgba(81, 128, 77, 0.3);
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        h2,
+        .image-mask,
+        .image-mask2 {
+          visibility: hidden;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
       }
     }
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-    }
-
-    h2 {
-      position: absolute;
-      bottom: 10%;
-      right: 5%;
-      z-index: 99;
-      font-size: 2.2rem;
+    #cocktail-drinks {
+      grid-column: 1 / 4;
+      grid-row: 1 / 3;
 
       @include media-md {
-        font-size: 1.8rem;
-        left: 0;
-        padding: 8px;
+        grid-column: 1 / -1;
       }
 
       @include media-sm {
-        font-size: 1rem;
-        left: 0;
-        bottom: 5%;
-        padding: 5px;
+        grid-column: 1 / -1;
+      }
+
+      img {
+        object-position: top;
+      }
+
+      h2 {
+        font-size: 8rem;
+
+        @include media-md {
+          font-size: 4rem;
+        }
+
+        @include media-sm {
+          font-size: 2rem;
+        }
       }
     }
 
-    .image-mask, .image-mask2 {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(1px);
-    }
-
-    .image-mask {
-      background: rgba(112, 112, 112, 0.5);
-    }
-
-    .image-mask2 {
-      background: rgba(81, 128, 77, 0.3);
-    }
-  }
-
-  #cocktail-drinks {
-    grid-column: 1 / 4;
-    grid-row: 1 / 3;
-
-    @include media-md {
-      grid-column: 1 / -1;
-    }
-
-    @include media-sm {
-      grid-column: 1 / -1;
-    }
-
-    img {
-      object-position: top;
-    }
-
-    h2 {
-      font-size: 8rem;
+    #ordinary-drinks {
+      grid-row: 1;
 
       @include media-md {
-        font-size: 4rem;
+        grid-column: 1 / -1;
+        grid-row: 4;
       }
 
       @include media-sm {
-        font-size: 2rem;
+        grid-column: 1 / 2;
+        grid-row: 3;
+      }
+    }
+
+    #alcoholic-drinks {
+      @include media-md {
+        grid-column: 3 / -1;
+        grid-row: 3;
+      }
+
+      @include media-sm {
+        grid-column: 2 / -1;
+        grid-row: 3;
+      }
+    }
+
+    #non-alcoholic-drinks {
+      @include media-md {
+        grid-column: 1 / 3;
+        grid-row: 3;
+      }
+
+      img {
+        object-position: 0 70%;
+      }
+    }
+
+    #liqueur-drinks {
+      @include media-sm {
+        grid-column: 1;
+        grid-row: 5;
       }
     }
   }
-
-  #ordinary-drinks {
-    grid-row: 1;
-
-    @include media-md {
-      grid-column: 1 / -1;
-      grid-row: 4;
-    }
-
-    @include media-sm {
-      grid-column: 1 / 2;
-      grid-row: 3;
-    }
-  }
-
-  #alcoholic-drinks {
-    @include media-md {
-      grid-column: 3 / -1;
-      grid-row: 3;
-    }
-
-    @include media-sm {
-      grid-column: 2 / -1;
-      grid-row: 3;
-    }
-  }
-
-  #non-alcoholic-drinks {
-    @include media-md {
-      grid-column: 1 / 3;
-      grid-row: 3;
-    }
-
-    img {
-      object-position: 0 70%;
-    }
-  }
-
-  #liqueur-drinks {
-    @include media-sm {
-      grid-column: 1;
-      grid-row: 5;
-    }
-  }
-}
 }
 
 // Cocktails section
 
 #cocktails {
-  i {
+  #cocktails-arrow {
     color: darkorchid;
   }
 
   .cocktails {
     color: #000;
 
-    img {
+    .cocktails-image {
       width: 200px;
-    height: 200px;
+      height: 200px;
     }
   }
 }
@@ -413,11 +415,11 @@
 #details {
   color: #000;
 
-  i {
+  #details-arrow {
     font-size: 2rem;
-  }
 
-  i:hover {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

@@ -391,27 +391,11 @@ body {
   }
 }
 
-#categories #grid-container div {
+#categories #grid-container .drinks {
   position: relative;
 }
 
-#categories #grid-container div:hover {
-  cursor: pointer;
-}
-
-#categories #grid-container div:hover h2, #categories #grid-container div:hover .image-mask, #categories #grid-container div:hover .image-mask2 {
-  visibility: hidden;
-}
-
-#categories #grid-container div img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-}
-
-#categories #grid-container div h2 {
+#categories #grid-container .drinks h2 {
   position: absolute;
   bottom: 10%;
   right: 5%;
@@ -420,7 +404,7 @@ body {
 }
 
 @media (min-width: 601px) and (max-width: 1200px) {
-  #categories #grid-container div h2 {
+  #categories #grid-container .drinks h2 {
     font-size: 1.8rem;
     left: 0;
     padding: 8px;
@@ -428,7 +412,7 @@ body {
 }
 
 @media (max-width: 600px) {
-  #categories #grid-container div h2 {
+  #categories #grid-container .drinks h2 {
     font-size: 1rem;
     left: 0;
     bottom: 5%;
@@ -436,7 +420,8 @@ body {
   }
 }
 
-#categories #grid-container div .image-mask, #categories #grid-container div .image-mask2 {
+#categories #grid-container .drinks .image-mask,
+#categories #grid-container .drinks .image-mask2 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -444,12 +429,30 @@ body {
           backdrop-filter: blur(1px);
 }
 
-#categories #grid-container div .image-mask {
+#categories #grid-container .drinks .image-mask {
   background: rgba(112, 112, 112, 0.5);
 }
 
-#categories #grid-container div .image-mask2 {
+#categories #grid-container .drinks .image-mask2 {
   background: rgba(81, 128, 77, 0.3);
+}
+
+#categories #grid-container .drinks:hover {
+  cursor: pointer;
+}
+
+#categories #grid-container .drinks:hover h2,
+#categories #grid-container .drinks:hover .image-mask,
+#categories #grid-container .drinks:hover .image-mask2 {
+  visibility: hidden;
+}
+
+#categories #grid-container .drinks img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
 }
 
 #categories #grid-container #cocktail-drinks {
@@ -557,7 +560,7 @@ body {
   }
 }
 
-#cocktails i {
+#cocktails #cocktails-arrow {
   color: darkorchid;
 }
 
@@ -565,7 +568,7 @@ body {
   color: #000;
 }
 
-#cocktails .cocktails img {
+#cocktails .cocktails .cocktails-image {
   width: 200px;
   height: 200px;
 }
@@ -574,11 +577,11 @@ body {
   color: #000;
 }
 
-#details i {
+#details #details-arrow {
   font-size: 2rem;
 }
 
-#details i:hover {
+#details #details-arrow:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
