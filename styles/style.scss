@@ -407,3 +407,17 @@
     }
   }
 }
+
+// Details section
+
+#details {
+  color: #000;
+
+  i {
+    font-size: 2rem;
+  }
+
+  i:hover {
+    cursor: pointer;
+  }
+}

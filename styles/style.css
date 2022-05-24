@@ -570,11 +570,15 @@ body {
   height: 200px;
 }
 
-#cocktail-details .details {
+#details {
   color: #000;
 }
 
-#cocktail-details i {
-  color: darkorchid;
+#details i {
+  font-size: 2rem;
+}
+
+#details i:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

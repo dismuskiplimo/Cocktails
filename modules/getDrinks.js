@@ -1,4 +1,4 @@
-import { getDetails } from "./getDetails.js";
+import { getDetails, cocktailDetails } from "./getDetails.js";
 
 const cocktailsSection = document.getElementById("cocktails");
 const mainSection = document.getElementById("main-section");
@@ -6,10 +6,20 @@ const categoriesSection = document.getElementById("categories");
 const leftArrow = document.querySelector(".fa-arrow-left");
 
 cocktailsSection.style.display = "none";
+cocktailDetails.style.display = "none";
 
 const getDrinks = (e) => {
   categoriesSection.style.display = "none";
   cocktailsSection.style.display = "block";
+  cocktailsSection.innerHTML = `<i class="fas fa-arrow-left" id="cocktails-arrow"></i>`;
+
+  const cocktailsArrow = document.getElementById("cocktails-arrow");
+
+  cocktailsArrow.addEventListener("click", () => {
+    cocktailsSection.innerHTML = "";
+    cocktailsSection.style.display = "none";
+    categoriesSection.style.display = "flex";
+  });
 
   let query2;
 
@@ -46,17 +56,16 @@ const getDrinks = (e) => {
       </div>
       `;
         cocktailsSection.appendChild(cocktailsDiv);
-        const cocktailDrinks = [
-          ...document.querySelectorAll(".cocktails > img"),
-        ];
-        cocktailDrinks.forEach((drink) =>
-          drink.addEventListener("click", (e) => {
-            cocktailsSection.style.display = "none";
-            cocktailDetails.style.display = "block";
-            getDetails(e);
-          })
-        );
       });
+      const cocktailDrinks = [...document.querySelectorAll(".cocktails > img")];
+
+      cocktailDrinks.forEach((drink) =>
+        drink.addEventListener("click", (e) => {
+          cocktailsSection.style.display = "none";
+          cocktailDetails.style.display = "block";
+          getDetails(e);
+        })
+      );
     })
     .catch((err) => {
       console.log(`error ${err}`);
