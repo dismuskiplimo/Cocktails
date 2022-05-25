@@ -21,7 +21,7 @@ const getCocktailName = (value) => {
         cocktailsDiv.classList.add('cocktails');
         cocktailsDiv.innerHTML = `
       <img src=${item.strDrinkThumb} alt="drink" id=${item.idDrink} class="cocktails-image">
-      <h2>${item.strDrink}</h2>
+      <h2 class="title">${item.strDrink}</h2>
       `;
         cocktailsGrid.appendChild(cocktailsDiv);
       });
