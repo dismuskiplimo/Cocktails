@@ -266,7 +266,7 @@ body {
 
 @media (max-width: 600px) {
   #main-section h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     top: 63%;
   }
 }
@@ -608,7 +608,7 @@ body {
 #cocktails #cocktails-arrow {
   position: -webkit-sticky;
   position: sticky;
-  top: 3%;
+  top: 8%;
   left: 5%;
   font-size: 2rem;
 }
