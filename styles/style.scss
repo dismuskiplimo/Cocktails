@@ -440,6 +440,10 @@
       font-size: 1.5rem;
     }
 
+    @include media-md {
+      font-size: 2rem;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -448,20 +452,36 @@
   .cocktails-grid {
     display: grid;
     justify-items: center;
+    padding: 50px;
 
     @include media-sm {
       grid-template-columns: 1fr;
     }
 
+    @include media-md {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 60px;
+    }
+
   .cocktails {
+  
     @include media-sm {
       margin-bottom: 50px;
+    }
+
+    @include media-md {
+      width: 300px;
     }
     
     .cocktails-image {
       @include media-sm {
         width: 250px;
         height: 250px;
+      }
+
+      @include media-md {
+        width: 100%;
+        height: 320px;
       }
     }
 
@@ -471,6 +491,13 @@
         width: 250px;
         text-align: center;
         margin-top: 10px;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+        width: 320px;
+        text-align: center;
+        margin-top: 15px
       }
     }
   }
@@ -486,11 +513,22 @@
   background: #000;
   color: #fff;
   height: 100vh;
-  padding: 20px;
+  padding: 30px;
+
+  @include media-sm {
+    padding: 20px;
+  }
 
   #details-arrow {
-    font-size: 1.5rem;
     color: #fff;
+
+    @include media-sm {
+      font-size: 1.5rem;
+    }
+
+    @include media-md {
+      font-size: 2rem;
+    }
 
     &:hover {
       cursor: pointer;
@@ -506,8 +544,15 @@
     
 
   .details-image {
-    width: 250px;
-    height: 250px;
+    @include media-sm {
+      width: 250px;
+      height: 250px;
+    }
+    
+    @include media-md {
+      width: 350px;
+      height: 350px;
+    }
   }
 
   h2 {
@@ -516,6 +561,10 @@
     @include media-sm {
       font-size: 1.5rem;
       text-align: center;
+    }
+
+    @include media-md {
+      font-size: 2.2rem;
     }
   }
 
@@ -526,17 +575,31 @@
       line-height: 1.2;
       width: 90%;
     }
+
+    @include media-md {
+      font-size: 1.8rem;
+      width: 85%;
+      text-align: center;
+    }
   }
 
   h3 {
     @include media-sm {
       font-size: 1.2rem;
     }
+
+    @include media-md {
+      font-size: 1.8rem;
+    }
   }
 
   ul {
     @include media-sm {
       font-size: 1.2rem;
+    }
+
+    @include media-md {
+      font-size: 1.8rem;
     }
 
     li {
@@ -552,5 +615,10 @@
   @include media-sm {
     padding: 20px;
     font-size: 1.2rem;
+  }
+
+  @include media-md {
+    font-size: 2rem;
+    text-align: center;
   }
 }

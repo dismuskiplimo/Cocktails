@@ -4,8 +4,15 @@ const mainSection = document.getElementById("main-section");
 const categoriesSection = document.getElementById("categories");
 const cocktailDetails = document.getElementById("details");
 const leftArrow = document.querySelector(".fa-arrow-left");
-
 const detailsDiv = document.querySelector(".details");
+const cocktailsGrid = document.querySelector(".cocktails-grid");
+const cocktailsArrow = document.getElementById("cocktails-arrow");
+
+cocktailsArrow.addEventListener("click", () => {
+  cocktailsGrid.innerHTML = "";
+  cocktailsSection.style.display = "none";
+  categoriesSection.style.display = "flex";
+});
 
 const getDetails = (e) => {
   const query1 = e.target.id;
@@ -49,7 +56,7 @@ const getDetails = (e) => {
       <h3>Ingredients</h3>
       <ul></ul>
       `;
-
+        cocktailDetails.appendChild(detailsDiv);
         const list = document.querySelector("ul");
 
         const ingredients = arrayOfIngredients.filter(
@@ -68,16 +75,6 @@ const getDetails = (e) => {
 const getDrinks = (e) => {
   categoriesSection.style.display = "none";
   cocktailsSection.style.display = "block";
-  cocktailsSection.innerHTML =
-    '<i class="fas fa-arrow-left" id="cocktails-arrow"></i>';
-
-  const cocktailsArrow = document.getElementById("cocktails-arrow");
-
-  cocktailsArrow.addEventListener("click", () => {
-    cocktailsSection.innerHTML = "";
-    cocktailsSection.style.display = "none";
-    categoriesSection.style.display = "flex";
-  });
 
   let query2;
 
@@ -110,14 +107,12 @@ const getDrinks = (e) => {
     .then((data) => {
       data.drinks.forEach((item) => {
         const cocktailsDiv = document.createElement("div");
-        cocktailsDiv.classList.add("cocktails-grid");
+        cocktailsDiv.classList.add("cocktails");
         cocktailsDiv.innerHTML = `
-      <div class='cocktails'>
       <img src=${item.strDrinkThumb} alt="drink" id=${item.idDrink} class="cocktails-image">
       <h2>${item.strDrink}</h2>
-      </div>
       `;
-        cocktailsSection.appendChild(cocktailsDiv);
+        cocktailsGrid.appendChild(cocktailsDiv);
       });
       const cocktailDrinks = [...document.querySelectorAll(".cocktails > img")];
 
@@ -145,4 +140,5 @@ export {
   cocktailDetails,
   mainSection,
   getDetails,
+  cocktailsGrid,
 };
