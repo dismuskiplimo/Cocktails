@@ -13,17 +13,6 @@ const getCocktailName = (value) => {
 
   const query1 = `s=${value}`;
 
-  // cocktailsSection.innerHTML =
-  //   '<i class="fas fa-arrow-left" id="cocktails-arrow"></i>';
-
-  // const cocktailsArrow = document.getElementById("cocktails-arrow");
-
-  // cocktailsArrow.addEventListener("click", () => {
-  //   cocktailsSection.innerHTML = "";
-  //   cocktailsSection.style.display = "none";
-  //   mainSection.style.display = "block";
-  // });
-
   fetch(`https://thecocktaildb.com/api/json/v1/1/search.php?${query1}`)
     .then((res) => res.json())
     .then((data) => {
@@ -53,6 +42,8 @@ const getCocktailName = (value) => {
         "Ooops, there's no cocktail with this name. Go back! Type a letter which is included in the name or a correct name...";
       cocktailsSection.appendChild(errorMsg);
     });
+  const previousError = document.querySelector(".error");
+  previousError.remove();
 };
 
 export default getCocktailName;
