@@ -239,7 +239,7 @@
     max-width: 1600px;
     height: 90vh;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     row-gap: 30px;
     column-gap: 30px;
@@ -319,7 +319,7 @@
     }
 
     #cocktail-drinks {
-      grid-column: 1 / 4;
+      grid-column: 1 / 3;
       grid-row: 1 / 3;
 
       @include media-md {
@@ -351,8 +351,12 @@
       grid-row: 1;
 
       @include media-md {
-        grid-column: 1 / -1;
-        grid-row: 4;
+        grid-column: 1 / 3;
+        grid-row: 5;
+
+        img {
+          object-position: 5% 40%;
+        }
       }
 
       @include media-sm {
@@ -363,8 +367,12 @@
 
     #alcoholic-drinks {
       @include media-md {
-        grid-column: 3 / -1;
+        grid-column: 2 / -1;
         grid-row: 3;
+
+        img {
+          object-position: 5% 15%;
+        }
       }
 
       @include media-sm {
@@ -375,7 +383,7 @@
 
     #non-alcoholic-drinks {
       @include media-md {
-        grid-column: 1 / 3;
+        grid-column: 1 / 2;
         grid-row: 3;
       }
 
@@ -385,9 +393,28 @@
     }
 
     #liqueur-drinks {
-      @include media-sm {
-        grid-column: 1;
+      @include media-md {
+        grid-column: 3 / -1;
         grid-row: 5;
+      }
+
+      @include media-sm {
+        grid-column: 1 / -1;
+        grid-row: 5;
+
+        img {
+          object-position: 5% 50%;
+        }
+      }
+    }
+
+    #shot-drinks {
+      @include media-md {
+        grid-column: 1 / -1;
+
+        img {
+          object-position: 5% 25%;
+        }
       }
     }
   }
@@ -396,16 +423,96 @@
 // Cocktails section
 
 #cocktails {
+  @include center;
+
+  background: #000;
+
   #cocktails-arrow {
-    color: darkorchid;
+    position: sticky;
+    top: 3%;
+    left: 5%;
+    font-size: 2rem;
+
+    @include media-sm {
+      font-size: 1.5rem;
+    }
+
+    @include media-md {
+      font-size: 2rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
-  .cocktails {
-    color: #000;
+  .cocktails-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 80px;
+    padding: 50px;
 
-    .cocktails-image {
-      width: 200px;
-      height: 200px;
+    @include media-sm {
+      grid-template-columns: 1fr;
+      row-gap: 50px;
+    }
+
+    @include media-md {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 60px;
+    }
+
+    .cocktails {
+      width: 380px;
+
+      @include media-sm {
+        margin-bottom: 50px;
+        width: unset;
+      }
+
+      @include media-md {
+        width: 300px;
+      }
+
+      .cocktails-image {
+        width: 100%;
+        height: 380px;
+
+        @include media-sm {
+          width: 250px;
+          height: 250px;
+        }
+
+        @include media-md {
+          width: 100%;
+          height: 320px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      h2.title {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-top: 20px;
+
+        @include media-sm {
+          font-size: 1.2rem;
+          width: 250px;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        @include media-md {
+          font-size: 1.8rem;
+          width: 320px;
+          text-align: center;
+          margin-top: 15px;
+        }
+      }
     }
   }
 }
@@ -413,13 +520,136 @@
 // Details section
 
 #details {
-  color: #000;
+  @include center;
+
+  flex-direction: column;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  padding: 30px;
+
+  @include media-sm {
+    padding: 20px;
+  }
 
   #details-arrow {
+    color: #fff;
     font-size: 2rem;
+
+    @include media-sm {
+      font-size: 1.5rem;
+    }
+
+    @include media-md {
+      font-size: 2rem;
+    }
 
     &:hover {
       cursor: pointer;
     }
+  }
+
+  .details {
+    @include center;
+
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+
+    .details-image {
+      width: 400px;
+      height: 400px;
+
+      @include media-sm {
+        width: 250px;
+        height: 250px;
+      }
+
+      @include media-md {
+        width: 350px;
+        height: 350px;
+      }
+    }
+
+    h2.details-title {
+      color: rgb(93, 146, 92);
+      font-size: 2.2rem;
+      text-align: center;
+
+      @include media-sm {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      @include media-md {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.8rem;
+      width: 70%;
+      text-align: center;
+
+      @include media-sm {
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 1.2;
+        width: 90%;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+        width: 85%;
+        text-align: center;
+      }
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      margin-top: 50px;
+
+      @include media-sm {
+        font-size: 1.2rem;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+      }
+    }
+
+    ul {
+      font-size: 1.8rem;
+
+      @include media-sm {
+        font-size: 1.2rem;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+      }
+
+      li {
+        list-style-type: square;
+        font-style: italic;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+.error {
+  font-size: 2.2rem;
+  text-align: center;
+  padding: 0 100px;
+
+  @include media-sm {
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+
+  @include media-md {
+    font-size: 2rem;
+    text-align: center;
   }
 }
