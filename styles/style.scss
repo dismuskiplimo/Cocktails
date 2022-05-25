@@ -463,58 +463,58 @@
       row-gap: 60px;
     }
 
-  .cocktails {
-    width: 380px;
-  
-    @include media-sm {
-      margin-bottom: 50px;
-      width: unset;
-    }
-
-    @include media-md {
-      width: 300px;
-    }
-    
-    .cocktails-image {
-      width: 100%;
-      height: 380px;
+    .cocktails {
+      width: 380px;
 
       @include media-sm {
-        width: 250px;
-        height: 250px;
+        margin-bottom: 50px;
+        width: unset;
       }
 
       @include media-md {
+        width: 300px;
+      }
+
+      .cocktails-image {
         width: 100%;
-        height: 320px;
+        height: 380px;
+
+        @include media-sm {
+          width: 250px;
+          height: 250px;
+        }
+
+        @include media-md {
+          width: 100%;
+          height: 320px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-top: 20px;
-
-      @include media-sm {
-        font-size: 1.2rem;
-        width: 250px;
-        text-align: center;
-        margin-top: 10px;
-      }
-
-      @include media-md {
+      h2.title {
         font-size: 1.8rem;
-        width: 320px;
         text-align: center;
-        margin-top: 15px
+        margin-top: 20px;
+
+        @include media-sm {
+          font-size: 1.2rem;
+          width: 250px;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        @include media-md {
+          font-size: 1.8rem;
+          width: 320px;
+          text-align: center;
+          margin-top: 15px;
+        }
       }
     }
   }
-}
 }
 
 // Details section
@@ -555,88 +555,87 @@
     flex-direction: column;
     gap: 30px;
     padding-bottom: 50px;
-    
 
-  .details-image {
-    width: 400px;
-    height: 400px;
+    .details-image {
+      width: 400px;
+      height: 400px;
 
-    @include media-sm {
-      width: 250px;
-      height: 250px;
-    }
-    
-    @include media-md {
-      width: 350px;
-      height: 350px;
-    }
-  }
+      @include media-sm {
+        width: 250px;
+        height: 250px;
+      }
 
-  h2 {
-    color: rgb(93, 146, 92);
-    font-size: 2.2rem;
-    text-align: center;
-
-    @include media-sm {
-      font-size: 1.5rem;
-      text-align: center;
+      @include media-md {
+        width: 350px;
+        height: 350px;
+      }
     }
 
-    @include media-md {
+    h2.details-title {
+      color: rgb(93, 146, 92);
       font-size: 2.2rem;
-    }
-  }
-
-  p {
-    font-size: 1.8rem;
-    width: 70%;
-    text-align: center;
-
-    @include media-sm {
-      font-size: 1.2rem;
       text-align: center;
-      line-height: 1.2;
-      width: 90%;
+
+      @include media-sm {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      @include media-md {
+        font-size: 2.2rem;
+      }
     }
 
-    @include media-md {
+    p {
       font-size: 1.8rem;
-      width: 85%;
+      width: 70%;
       text-align: center;
+
+      @include media-sm {
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 1.2;
+        width: 90%;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+        width: 85%;
+        text-align: center;
+      }
     }
-  }
 
-  h3 {
-    font-size: 1.8rem;
-    margin-top: 50px;
-
-    @include media-sm {
-      font-size: 1.2rem;
-    }
-
-    @include media-md {
+    h3 {
       font-size: 1.8rem;
+      margin-top: 50px;
+
+      @include media-sm {
+        font-size: 1.2rem;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+      }
     }
-  }
 
-  ul {
-    font-size: 1.8rem;
-
-    @include media-sm {
-      font-size: 1.2rem;
-    }
-
-    @include media-md {
+    ul {
       font-size: 1.8rem;
-    }
 
-    li {
-      list-style-type: square;
-      font-style: italic;
-      line-height: 1.2;
+      @include media-sm {
+        font-size: 1.2rem;
+      }
+
+      @include media-md {
+        font-size: 1.8rem;
+      }
+
+      li {
+        list-style-type: square;
+        font-style: italic;
+        line-height: 1.2;
+      }
     }
   }
-}
 }
 
 .error {
