@@ -427,10 +427,6 @@
 
   background: #000;
 
-  @include media-sm {
-    padding: 15px;
-  }
-
   #cocktails-arrow {
     position: sticky;
     top: 3%;
@@ -459,6 +455,7 @@
 
     @include media-sm {
       grid-template-columns: 1fr;
+      row-gap: 50px;
     }
 
     @include media-md {
@@ -471,6 +468,7 @@
   
     @include media-sm {
       margin-bottom: 50px;
+      width: unset;
     }
 
     @include media-md {
@@ -489,6 +487,10 @@
       @include media-md {
         width: 100%;
         height: 320px;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
 
@@ -532,6 +534,7 @@
 
   #details-arrow {
     color: #fff;
+    font-size: 2rem;
 
     @include media-sm {
       font-size: 1.5rem;
@@ -555,6 +558,9 @@
     
 
   .details-image {
+    width: 400px;
+    height: 400px;
+
     @include media-sm {
       width: 250px;
       height: 250px;
@@ -568,6 +574,8 @@
 
   h2 {
     color: rgb(93, 146, 92);
+    font-size: 2.2rem;
+    text-align: center;
 
     @include media-sm {
       font-size: 1.5rem;
@@ -580,6 +588,10 @@
   }
 
   p {
+    font-size: 1.8rem;
+    width: 70%;
+    text-align: center;
+
     @include media-sm {
       font-size: 1.2rem;
       text-align: center;
@@ -595,6 +607,9 @@
   }
 
   h3 {
+    font-size: 1.8rem;
+    margin-top: 50px;
+
     @include media-sm {
       font-size: 1.2rem;
     }
@@ -605,6 +620,8 @@
   }
 
   ul {
+    font-size: 1.8rem;
+
     @include media-sm {
       font-size: 1.2rem;
     }

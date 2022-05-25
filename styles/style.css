@@ -605,12 +605,6 @@ body {
   background: #000;
 }
 
-@media (max-width: 600px) {
-  #cocktails {
-    padding: 15px;
-  }
-}
-
 #cocktails #cocktails-arrow {
   position: -webkit-sticky;
   position: sticky;
@@ -649,6 +643,7 @@ body {
   #cocktails .cocktails-grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    row-gap: 50px;
   }
 }
 
@@ -667,6 +662,7 @@ body {
 @media (max-width: 600px) {
   #cocktails .cocktails-grid .cocktails {
     margin-bottom: 50px;
+    width: unset;
   }
 }
 
@@ -693,6 +689,10 @@ body {
     width: 100%;
     height: 320px;
   }
+}
+
+#cocktails .cocktails-grid .cocktails .cocktails-image:hover {
+  cursor: pointer;
 }
 
 #cocktails .cocktails-grid .cocktails h2 {
@@ -747,6 +747,7 @@ body {
 
 #details #details-arrow {
   color: #fff;
+  font-size: 2rem;
 }
 
 @media (max-width: 600px) {
@@ -783,6 +784,11 @@ body {
   padding-bottom: 50px;
 }
 
+#details .details .details-image {
+  width: 400px;
+  height: 400px;
+}
+
 @media (max-width: 600px) {
   #details .details .details-image {
     width: 250px;
@@ -799,6 +805,8 @@ body {
 
 #details .details h2 {
   color: #5d925c;
+  font-size: 2.2rem;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -812,6 +820,12 @@ body {
   #details .details h2 {
     font-size: 2.2rem;
   }
+}
+
+#details .details p {
+  font-size: 1.8rem;
+  width: 70%;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -831,6 +845,11 @@ body {
   }
 }
 
+#details .details h3 {
+  font-size: 1.8rem;
+  margin-top: 50px;
+}
+
 @media (max-width: 600px) {
   #details .details h3 {
     font-size: 1.2rem;
@@ -841,6 +860,10 @@ body {
   #details .details h3 {
     font-size: 1.8rem;
   }
+}
+
+#details .details ul {
+  font-size: 1.8rem;
 }
 
 @media (max-width: 600px) {
