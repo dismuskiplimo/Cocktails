@@ -10,6 +10,7 @@
 body {
   color: #fff;
   font-family: 'Times New Roman', Times, serif;
+  background: #000;
 }
 
 .mobile-div {
@@ -663,15 +664,93 @@ body {
 }
 
 #details {
-  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  padding: 20px;
 }
 
 #details #details-arrow {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
 #details #details-arrow:hover {
   cursor: pointer;
+}
+
+#details .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  padding-bottom: 50px;
+}
+
+#details .details .details-image {
+  width: 250px;
+  height: 250px;
+}
+
+#details .details h2 {
+  color: #5d925c;
+}
+
+@media (max-width: 600px) {
+  #details .details h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  #details .details p {
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.2;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  #details .details h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #details .details ul {
+    font-size: 1.2rem;
+  }
+}
+
+#details .details ul li {
+  list-style-type: square;
+  font-style: italic;
+  line-height: 1.2;
 }
 
 @media (max-width: 600px) {

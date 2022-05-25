@@ -480,15 +480,72 @@
 // Details section
 
 #details {
-  color: #000;
+  @include center;
+
+  flex-direction: column;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  padding: 20px;
 
   #details-arrow {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: #fff;
 
     &:hover {
       cursor: pointer;
     }
   }
+
+  .details {
+    @include center;
+
+    flex-direction: column;
+    gap: 30px;
+    padding-bottom: 50px;
+    
+
+  .details-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  h2 {
+    color: rgb(93, 146, 92);
+
+    @include media-sm {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+
+  p {
+    @include media-sm {
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 1.2;
+      width: 90%;
+    }
+  }
+
+  h3 {
+    @include media-sm {
+      font-size: 1.2rem;
+    }
+  }
+
+  ul {
+    @include media-sm {
+      font-size: 1.2rem;
+    }
+
+    li {
+      list-style-type: square;
+      font-style: italic;
+      line-height: 1.2;
+    }
+  }
+}
 }
 
 .error {

@@ -43,9 +43,10 @@ const getDetails = (e) => {
         );
 
         detailsDiv.innerHTML = `
-      <img alt="drink" src=${drink.strDrinkThumb}>
+      <img alt="drink" src=${drink.strDrinkThumb} class="details-image">
       <h2>${drink.strDrink}</h2>
       <p>${drink.strInstructions}</p>
+      <h3>Ingredients</h3>
       <ul></ul>
       `;
 
